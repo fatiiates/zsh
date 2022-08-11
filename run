@@ -1,0 +1,16 @@
+#!/bin/sh
+
+sudo apt-get update -y && sudo apt-get upgrade -y
+sudo apt-get install zsh exa -y
+
+tar xf zsh.tar.gz
+
+sudo chown -R $USER:$USER ./.*
+
+cp -r $(ls -a | grep "^\." | tail -n 5 | tr '\n' ' ') $HOME
+
+sudo cp ./font/'MesloLGS NF Regular.ttf' /usr/local/share/fonts/
+
+chsh --shell /bin/zsh $USER
+
+exit
