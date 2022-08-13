@@ -1,7 +1,8 @@
 #!/bin/sh
 
+sudo apt-get install sudo -y
 sudo apt-get update -y && sudo apt-get upgrade -y
-sudo apt-get install zsh exa -y
+sudo apt-get install zsh -y
 
 tar xf zsh.tar.gz
 
@@ -12,5 +13,7 @@ cp -r $(ls -a | grep "^\." | tail -n 4 | tr '\n' ' ') $HOME
 sudo cp ./font/'MesloLGS NF Regular.ttf' /usr/local/share/fonts/
 
 chsh --shell /bin/zsh $USER
+
+sudo apt-get install exa -y
 
 exit
